@@ -23,4 +23,10 @@ public readonly struct FObjectImport
     /// Index into SourceLinker's ExportMap for the export associated with this import's UObject.
     /// </summary>
     public FPackageIndex SourceIndex { get; init; }
+
+    /// <summary>
+    /// Converts current import to string.
+    /// </summary>
+    /// <returns>Name of the current import object.</returns>
+    public override string ToString() => ObjectName.ToString();
 }
