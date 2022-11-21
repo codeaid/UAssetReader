@@ -1,6 +1,8 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAssetReader.Runtime", "UAssetReader.Runtime\UAssetReader.Runtime.csproj", "{78E3918E-7DD3-4AA5-B448-5977A333BDDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAssetReader.Core", "UAssetReader.Core\UAssetReader.Core.csproj", "{94CAF6D9-7472-44B6-BF6A-300E1B54AC71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -11,5 +13,9 @@ Global
 		{78E3918E-7DD3-4AA5-B448-5977A333BDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E3918E-7DD3-4AA5-B448-5977A333BDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E3918E-7DD3-4AA5-B448-5977A333BDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94CAF6D9-7472-44B6-BF6A-300E1B54AC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94CAF6D9-7472-44B6-BF6A-300E1B54AC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94CAF6D9-7472-44B6-BF6A-300E1B54AC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94CAF6D9-7472-44B6-BF6A-300E1B54AC71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
