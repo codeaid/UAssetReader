@@ -7,7 +7,7 @@ public class UCoreReader
     /// <summary>
     /// Stream reader used to read contents of asset files.
     /// </summary>
-    public StreamReader StreamReader { get; }
+    private StreamReader StreamReader { get; }
 
     /// <summary>
     /// Class constructor.
