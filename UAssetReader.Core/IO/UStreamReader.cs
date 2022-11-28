@@ -16,7 +16,7 @@ public class UStreamReader : StreamReader
     /// <returns>Boolean value read from the stream.</returns>
     public bool ReadFBool()
     {
-        Logger?.Verbose($"Reading Unreal Engine boolean value at {Position}");
+        Logger?.Verbose("Reading Unreal Engine boolean value at {Position}", Position);
 
         return ReadInt32() != 0;
     }
@@ -29,7 +29,7 @@ public class UStreamReader : StreamReader
     /// <returns>List of values read from the stream.</returns>
     public List<T> ReadFList<T>(Func<T> generator)
     {
-        Logger?.Verbose($"Reading Unreal Engine list using a generator at {Position}");
+        Logger?.Verbose("Reading Unreal Engine list using a generator at {Position}", Position);
 
         // Determine the number of items to read from the stream.
         int count = ReadInt32();
@@ -43,7 +43,7 @@ public class UStreamReader : StreamReader
     /// <returns>String value read from the stream.</returns>
     public string ReadFString()
     {
-        Logger?.Verbose($"Reading Unreal Engine string value at {Position}");
+        Logger?.Verbose("Reading Unreal Engine string value at {Position}", Position);
 
         // Determine length of the string to read.
         int length = ReadInt32();

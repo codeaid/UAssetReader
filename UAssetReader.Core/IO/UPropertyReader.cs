@@ -40,7 +40,7 @@ public class UPropertyReader
     /// <returns>List of properties read from the current stream.</returns>
     private List<FProperty> ReadProperties()
     {
-        Logger?.Debug($"Reading properties at {StreamReader.Position}");
+        Logger?.Debug("Reading properties at {Position}", StreamReader.Position);
 
         // Target container for all read properties.
         var properties = new List<FProperty>();
@@ -116,7 +116,7 @@ public class UPropertyReader
     /// <exception cref="Exception">Thrown if the specified property type is not supported.</exception>
     private FProperty ReadProperty(FName type, FPropertyTag tag, bool skipGuid)
     {
-        Logger?.Debug($"Reading {type} at {StreamReader.Position}");
+        Logger?.Debug("Reading {Type} at {Position}", type, StreamReader.Position);
 
         return type.ToString() switch
         {
@@ -391,7 +391,8 @@ public class UPropertyReader
 
             default:
                 Logger?.Error(
-                    $"Unknown struct property child type {structType} encountered at {StreamReader.Position} ({tag.Size} bytes)");
+                    "Unknown struct property child type {StructType} encountered at {Position} ({TagSize} bytes)",
+                    structType, StreamReader.Position, tag.Size);
 
                 byte[] bytes = StreamReader.ReadBytes(tag.Size);
                 return new FCustomProperty<byte[]>(tag, bytes);

@@ -33,7 +33,7 @@ public class UObjectReader
     /// <returns>Value of EObjectFlags enum.</returns>
     public EObjectFlags ReadEObjectFlags()
     {
-        Logger?.Debug($"Reading EObjectFlags at {StreamReader.Position}");
+        Logger?.Debug("Reading EObjectFlags at {Position}", StreamReader.Position);
 
         return (EObjectFlags) StreamReader.ReadUInt32();
     }
@@ -44,7 +44,7 @@ public class UObjectReader
     /// <returns>An instance of FGuid.</returns>
     public FGuid ReadFGuid()
     {
-        Logger?.Debug($"Reading FGuid at {StreamReader.Position}");
+        Logger?.Debug("Reading FGuid at {Position}", StreamReader.Position);
 
         return new FGuid
         {
@@ -58,7 +58,7 @@ public class UObjectReader
     /// <returns>An instance of FName.</returns>
     public FName ReadFName()
     {
-        Logger?.Debug($"Reading FName at {StreamReader.Position}");
+        Logger?.Debug("Reading FName at {Position}", StreamReader.Position);
 
         // Retrieve index of the name entry.
         int index = StreamReader.ReadInt32();
@@ -79,7 +79,7 @@ public class UObjectReader
     /// <returns>An instance of FPackageIndex.</returns>
     public FPackageIndex ReadFPackageIndex()
     {
-        Logger?.Debug($"Reading FPackageIndex at {StreamReader.Position}");
+        Logger?.Debug("Reading FPackageIndex at {Position}", StreamReader.Position);
 
         return new FPackageIndex
         {
@@ -93,7 +93,7 @@ public class UObjectReader
     /// <returns>An instance of FPropertyGuid.</returns>
     public FGuid? ReadFPropertyGuid()
     {
-        Logger?.Debug($"Reading property FGuid at {StreamReader.Position}");
+        Logger?.Debug("Reading property FGuid at {Position}", StreamReader.Position);
 
         // Determine if GUID value is present in the stream.
         bool hasGuid = StreamReader.ReadBool();
@@ -108,7 +108,7 @@ public class UObjectReader
     /// <returns>An instance of FPropertyTag.</returns>
     public FPropertyTag ReadFPropertyTag()
     {
-        Logger?.Debug($"Reading FPropertyTag at {StreamReader.Position}");
+        Logger?.Debug("Reading FPropertyTag at {Position}", StreamReader.Position);
 
         return new FPropertyTag
         {

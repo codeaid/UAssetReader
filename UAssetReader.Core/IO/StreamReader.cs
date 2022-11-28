@@ -39,7 +39,7 @@ public class StreamReader
     /// <returns>An array of bytes read from the stream.</returns>
     public byte[] ReadBytes(int count)
     {
-        Logger?.Verbose("Reading {0} bytes at offset {1}", count, Position);
+        Logger?.Verbose("Reading {Count} bytes at offset {Position}", count, Position);
 
         // Read the specified number of bytes from the source stream.
         var buffer = new byte[count];
@@ -57,7 +57,7 @@ public class StreamReader
             return buffer;
         }
 
-        Logger?.Error("Requested {0} bytes but read {1} at offset {2}", count, bytesRead, Position);
+        Logger?.Error("Requested {Count} bytes but read {BytesRead} at offset {Position}", count, bytesRead, Position);
         throw new Exception($"Unable to read the required number of bytes ({count})");
     }
 
@@ -67,7 +67,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public bool ReadBool()
     {
-        Logger?.Verbose($"Reading boolean value at {Position}");
+        Logger?.Verbose("Reading boolean value at {Position}", Position);
 
         return ReadByte() != 0;
     }
@@ -78,7 +78,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public byte ReadByte()
     {
-        Logger?.Verbose($"Reading byte value at {Position}");
+        Logger?.Verbose("Reading byte value at {Position}", Position);
 
         byte[] bytes = ReadBytes(1);
         return bytes[0];
@@ -90,7 +90,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public float ReadFloat32()
     {
-        Logger?.Verbose($"Reading 32-bit floating point value at {Position}");
+        Logger?.Verbose("Reading 32-bit floating point value at {Position}", Position);
 
         byte[] bytes = ReadBytes(4);
         return BitConverter.ToSingle(bytes);
@@ -102,7 +102,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public double ReadFloat64()
     {
-        Logger?.Verbose($"Reading 64-bit floating point value at {Position}");
+        Logger?.Verbose("Reading 64-bit floating point value at {Position}", Position);
 
         byte[] bytes = ReadBytes(8);
         return BitConverter.ToDouble(bytes);
@@ -114,7 +114,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public decimal ReadFloat128()
     {
-        Logger?.Verbose($"Reading 128-bit floating point value at {Position}");
+        Logger?.Verbose("Reading 128-bit floating point value at {Position}", Position);
 
         byte[] bytes = ReadBytes(16);
         return Convert.ToDecimal(BitConverter.ToDouble(bytes, 0));
@@ -126,7 +126,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public Guid ReadGuid()
     {
-        Logger?.Verbose($"Reading GUID value at {Position}");
+        Logger?.Verbose("Reading GUID value at {Position}", Position);
 
         byte[] bytes = ReadBytes(16);
         return new Guid(bytes);
@@ -138,7 +138,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public short ReadInt16()
     {
-        Logger?.Verbose($"Reading 16-bit integer value at {Position}");
+        Logger?.Verbose("Reading 16-bit integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(2);
         return BitConverter.ToInt16(bytes);
@@ -150,7 +150,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public int ReadInt32()
     {
-        Logger?.Verbose($"Reading 32-bit integer value at {Position}");
+        Logger?.Verbose("Reading 32-bit integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(4);
         return BitConverter.ToInt32(bytes);
@@ -162,7 +162,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public long ReadInt64()
     {
-        Logger?.Verbose($"Reading 64-bit integer value at {Position}");
+        Logger?.Verbose("Reading 64-bit integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(8);
         return BitConverter.ToInt64(bytes);
@@ -174,7 +174,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public ushort ReadUInt16()
     {
-        Logger?.Verbose($"Reading 16-bit unsigned integer value at {Position}");
+        Logger?.Verbose("Reading 16-bit unsigned integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(2);
         return BitConverter.ToUInt16(bytes);
@@ -186,7 +186,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public uint ReadUInt32()
     {
-        Logger?.Verbose($"Reading 32-bit unsigned integer value at {Position}");
+        Logger?.Verbose("Reading 32-bit unsigned integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(4);
         return BitConverter.ToUInt32(bytes);
@@ -198,7 +198,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public ulong ReadUInt64()
     {
-        Logger?.Verbose($"Reading 64-bit unsigned integer value at {Position}");
+        Logger?.Verbose("Reading 64-bit unsigned integer value at {Position}", Position);
 
         byte[] bytes = ReadBytes(8);
         return BitConverter.ToUInt64(bytes);
@@ -210,7 +210,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public string ReadStringAscii(int length)
     {
-        Logger?.Verbose($"Reading ASCII string value at {Position}");
+        Logger?.Verbose("Reading ASCII string value at {Position}", Position);
 
         byte[] bytes = ReadBytes(length - 1);
 
@@ -226,7 +226,7 @@ public class StreamReader
     /// <returns>Value converted from the byte span.</returns>
     public string ReadStringUtf16(int length)
     {
-        Logger?.Verbose($"Reading UTF-16 string value at {Position}");
+        Logger?.Verbose("Reading UTF-16 string value at {Position}", Position);
 
         byte[] bytes = ReadBytes(length - 1);
 

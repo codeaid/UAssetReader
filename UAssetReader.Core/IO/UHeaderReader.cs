@@ -42,7 +42,7 @@ public class UHeaderReader
     /// <returns>An instance of FCustomVersion.</returns>
     private FCustomVersion ReadFCustomVersion()
     {
-        Logger?.Debug($"Reading FCustomVersion at {StreamReader.Position}");
+        Logger?.Debug("Reading FCustomVersion at {Position}", StreamReader.Position);
 
         return new FCustomVersion
         {
@@ -56,7 +56,7 @@ public class UHeaderReader
     /// <returns>An instance of FEngineVersion.</returns>
     private FEngineVersion ReadFEngineVersion()
     {
-        Logger?.Debug($"Reading FEngineVersion at {StreamReader.Position}");
+        Logger?.Debug("Reading FEngineVersion at {Position}", StreamReader.Position);
 
         return new FEngineVersion
         {
@@ -73,7 +73,7 @@ public class UHeaderReader
     /// <returns>An instance of FGenerationInfo.</returns>
     private FGenerationInfo ReadFGenerationInfo()
     {
-        Logger?.Debug($"Reading FGenerationInfo at {StreamReader.Position}");
+        Logger?.Debug("Reading FGenerationInfo at {Position}", StreamReader.Position);
 
         return new FGenerationInfo
         {
@@ -88,7 +88,7 @@ public class UHeaderReader
     /// <returns>An instance of FNameEntry.</returns>
     private FNameEntry ReadFNameEntry()
     {
-        Logger?.Debug($"Reading FNameEntry at {StreamReader.Position}");
+        Logger?.Debug("Reading FNameEntry at {Position}", StreamReader.Position);
 
         return new FNameEntry
         {
@@ -105,7 +105,7 @@ public class UHeaderReader
     /// <returns>List of names.</returns>
     public List<FNameEntry> ReadFNameEntryList(FPackageFileSummary summary)
     {
-        Logger?.Debug($"Reading list of FNameEntry objects at {StreamReader.Position}");
+        Logger?.Debug("Reading list of FNameEntry objects at {Position}", StreamReader.Position);
 
         // Remember the current stream position.
         long originalPosition = StreamReader.Position;
@@ -126,7 +126,7 @@ public class UHeaderReader
     /// <returns>An instance of FObjectExport.</returns>
     private FObjectExport ReadFObjectExport()
     {
-        Logger?.Debug($"Reading FObjectExport at {StreamReader.Position}");
+        Logger?.Debug("Reading FObjectExport at {Position}", StreamReader.Position);
 
         return new FObjectExport
         {
